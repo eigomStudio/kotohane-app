@@ -1,1 +1,238 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta charset="UTF-8">
+  <title>kotohane four tones</title>
+</head>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #666;
+    --border: #e6e6ea;
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-size: 16px;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    padding: 10px;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 56px auto;
+    padding: 0 18px;
+  }
+
+  .title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.title-wrap h1 {
+  margin: 0;          /* デフォルトの余白を消す */
+  padding-top: 6px;   /* この数字を大きくするほど、文字が下に下がります */
+  font-size: 24px;    /* もし文字サイズも変えたければここで */
+}
+
+.app-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+  
+  header {
+    text-align: center;
+    padding: 28px 0 10px;
+  }
+
+  h1 {
+    margin: 0 0 8px 0;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .section {
+    margin: 26px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+
+  /* 🔹 画像の基本設定（常に必要） */
+  .feature img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    display: block;
+  }
+
+  .feature h2 {
+    margin: 0 0 10px 0;
+  }
+
+  .feature p {
+    margin: 0;
+    color: var(--muted);
+  }
+  
+.feature-item {
+  display: flex;       /* これで横並びになります */
+  align-items: center;  /* 上下の中央を揃えます */
+  gap: 30px;           /* 図と説明の間のスキマ */
+}
+  footer {
+    text-align: center;
+    margin: 42px 0 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* PC版の設定（横並び） */
+.summary-container {
+  display: flex;
+  align-items: flex-start; /* 上揃え（中央なら center） */
+  gap: 20px;               /* 図と説明の間の隙間 */
+  margin-top: 20px;
+}
+
+.summary-image {
+  flex: 0 0 300px;         /* 図の横幅を300pxに固定（お好みで調整） */
+  width: 100%;             /* 枠内で100%表示 */
+  height: auto;            /* 縦横比を維持（これで細長くならない） */
+  border-radius: 10px;     /* 必要なら角丸に */
+}
+
+.summary-text {
+  flex: 1;                 /* 残りのスペースをすべて使う */
+}
+
+/* スマホ版の設定（縦並びに戻す） */
+@media (max-width: 600px) {
+  .summary-container {
+    flex-direction: column; /* 縦に並べる */
+    align-items: center;    /* 中央寄せ */
+  }
+  
+  .summary-image {
+    flex: 0 0 auto;
+    width: 100%;            /* スマホでは横幅いっぱい */
+    max-width: 300px;       /* でも大きくなりすぎないように */
+  }
+  
+  .feature-item {
+    flex-direction: column; /* スマホでは縦並びに戻す */
+    text-align: center;    /* 文字を中央寄せにするとスマホっぽくなります */
+  }
+}
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title-wrap">
+        <img src="image/app_icon_1024.png" alt="App Icon" class="app-icon">
+        <h1>kotohane four tones</h1>
+      </div>
+      <p>四声トレーニングアプリ</p>
+    </header>
+
+    <!-- Feature -->
+    <section class="section">
+      <h2 style="margin:2px 0 6px 0;">アプリの特徴</h2>
+      <ol>
+        <li>ma の音で四声の練習ができます。</li>
+        <li>発音の状況がグラフ化されるので、自分の声調の変化をイメージしながら練習ができます。</li>
+        <li>発音しやすい単語で、２音連続の練習ができます。</li>
+        <li>日本大学のNU-Mailアカウント（@nihon-u.ac.jp または @g.nihon-u.ac.jp）でログインして使用します。</li>
+        <li>練習前に自分の声の高さを登録（キャリブレーション）することで、正確な判定ができます。</li>
+      </ol>
+    </section>
+
+    <!-- 1: １音練習 -->
+    <section class="section">
+        <div class="feature">
+          <h2>四声の練習画面</h2>
+          <img src="image/fig1.png" alt="screenshot of single tone practice" style="width: 100%; height: auto;">
+          <p>
+            <ul>
+            <li>グラフを見ながら声調の練習ができます。</li>
+            <li>普通よりゆっくり発音して、声調がコントロールできるようになるよう練習しましょう。</li>
+              <li>はじめて使う場合は、設定画面から「声のキャリブレーション」を行います。普通の声で「あ」と3秒発音して登録します。</li>
+            </ul>
+          </p>
+      </div>
+    </section>
+
+    <!-- 2: ２音練習 -->
+    <section class="section">
+        <div class="feature">
+          <h2>２音練習の画面</h2>
+          <img src="image/fig2.png" alt="screenshot of two-tone practice">
+          <p>
+            <ul>
+            <li>１音ずつ発音できるようになっても、慣れないうちは四声が連続すると発音できなくなってしまう人が少なくありません。</li>
+            <li>そこで、２音連続する音声の練習をします。</li>
+            <li>練習する単語は、中国語独特の難しい発音はありませんから、発音に気を取られることなく、正しい声調で発音することに集中できます。</li>
+            <li>画面下に表示されるプログレスバーに合わせて１音目と２音目を発音してください。</li>
+            </ul>
+          </p>
+      </div>
+    </section>
+
+        <!-- ３: 学習サマリー -->
+    <section class="section">
+        <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap;">
+          <h2>学習サマリーの画面</h2>
+          <div class="feature-item">
+          <img src="image/fig3.png"  alt="screenshot of learning summary" class="feature-image" style="width: 280px; flex-shrink: 0;">
+          <p>
+            <ul>
+            <li>学習サマリーで学習状況を確認できます。</li>
+            <li>練習問題ごとの最高点、練習回数が表示されます。</li>
+            <li>練習状況に応じてバッジが表示されます。</li>
+            </ul>
+          </p>
+            </div>
+      </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="section">
+      <h2 style="margin:2px 0 6px 0;">動作環境</h2>
+      <ul>
+        <li>iOS 16以上</li>
+        <li>Android 8.0以上</li>
+        <li>日本大学のNU-Mailアカウントが必要です</li>
+      </ul>
+    </section>
+    
+    <footer>© 2026 eigomStudio</footer>
+  </div>
+</body>
+</html>
+
+</html>
