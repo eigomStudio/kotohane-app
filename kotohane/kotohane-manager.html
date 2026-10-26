@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kotohane Manager</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #666;
+    --border: #e6e6ea;
+    --radius: 18px;
+    --accent: #2f6fde;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-size: 16px;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    padding: 10px;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 56px auto;
+    padding: 0 18px;
+  }
+
+  .title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .title-wrap h1 {
+    margin: 0;
+    padding-top: 6px;
+    font-size: 24px;
+  }
+
+  .app-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+
+  header {
+    text-align: center;
+    padding: 28px 0 10px;
+  }
+
+  h1 {
+    margin: 0 0 8px 0;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+  }
+
+  .section {
+    margin: 26px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+
+  .feature img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    display: block;
+  }
+
+  .feature h2 {
+    margin: 0 0 10px 0;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 30px;
+  }
+
+  /* PC画面のキャプチャ（横長）用：画像を上、説明を下に置く */
+  .feature-wide {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .feature-wide img {
+    width: 100%;
+  }
+
+  .feature-wide ul {
+    margin: 0;
+  }
+
+  /* ボタン・リンク */
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .btn.secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .note {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  footer {
+    text-align: center;
+    margin: 42px 0 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    .feature-item {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title-wrap">
+        <img src="image/kotohane_icon_1024.png" alt="App Icon" class="app-icon">
+        <h1>kotohane Manager</h1>
+      </div>
+      <p>kotohane 教員用管理アプリ</p>
+      <div class="btn-row">
+        <a class="btn" href="https://kotohane-c20cd.web.app" target="_blank" rel="noopener">kotohane Manager を開く</a>
+        <a class="btn secondary" href="index.html">kotohane（学生用アプリ）の紹介へ</a>
+      </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 style="margin:2px 0 6px 0;">kotohane Manager とは</h2>
+      <p>学生用の発音練習アプリ「kotohane」で使う練習問題（レッスン）やクラスを、教員が管理するためのWebアプリです。PCのWebブラウザから利用します。</p>
+      <ol>
+        <li>担当するクラスを作成し、評価基準や評価メッセージを設定できます。</li>
+        <li>単語・会話・スピーチの練習問題を、授業の教科書に合わせて登録できます。</li>
+        <li>Excelファイルから練習問題を一括で登録・出力できます。</li>
+        <li>クラス全体の練習状況や、学生ごとの練習履歴を確認できます。</li>
+        <li>日本大学のNU-Mailアカウントでログインして使用します。</li>
+      </ol>
+      <p class="note">※ 学生用アプリ（kotohane）は練習専用です。練習問題の作成・管理はこの kotohane Manager で行います。</p>
+    </section>
+
+    <!-- 1: クラス管理 -->
+    <section class="section">
+      <div class="feature">
+        <h2>クラス管理</h2>
+        <div class="feature-wide">
+          <img src="image/manager01.png" alt="クラス管理画面のスクリーンショット">
+          <ul>
+            <li>クラス名・クラスコード（例：FR_001）・年度・レベル（初級／中級／上級）を設定してクラスを作成します。</li>
+            <li>発音の評価基準（「優れた」「良い」と判定する点数のしきい値）を設定できます。</li>
+            <li>評価ごとに学生に表示するメッセージ（例：「すばらしい!!」「悪くないよ」「もう一度チャレンジしよう!」）を変更できます。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2: レッスン管理 -->
+    <section class="section">
+      <div class="feature">
+        <h2>レッスン（練習問題）の作成</h2>
+        <div class="feature-wide">
+          <img src="image/manager02.png" alt="レッスン管理画面のスクリーンショット">
+          <ul>
+            <li>クラスごとに、タイトル・練習タイプ（単語／会話／スピーチ）・表示順を指定してレッスンを追加します。</li>
+            <li>日本語の表示テキストと、発音練習用のテキストを組にして登録します。中国語では拼音も登録できます。</li>
+            <li>登録済みのレッスンは、あとから内容を編集できます。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3: Excel一括登録 -->
+    <section class="section">
+      <div class="feature">
+        <h2>Excelでの一括登録・出力</h2>
+        <div class="feature-wide">
+          <img src="image/manager03.png" alt="Excel一括登録画面のスクリーンショット">
+          <ul>
+            <li>テンプレートのExcelファイル（シート名「Lessons」）に練習問題を入力し、まとめて登録できます。</li>
+            <li>同じタイトルのレッスンがある場合は、「すべて上書き」「個別に確認」を選べます。</li>
+            <li>登録済みのレッスンをExcelファイルに出力できるので、次の年度や別のクラスでも再利用できます。</li>
+            <li>日本語にルビ（ふりがな）が付いていると一緒に読み込まれてしまうため、一括削除用の「ルビ削除マクロ」を用意しています。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4: 学習状況統計 -->
+    <section class="section">
+      <div class="feature">
+        <h2>学習状況の集計</h2>
+        <div class="feature-wide">
+          <img src="image/manager04.png" alt="学習状況統計画面のスクリーンショット">
+          <ul>
+            <li>クラスの練習者数を確認できます。</li>
+            <li>レッスンの問ごとに、練習者数・平均練習回数・平均点（ベストスコア）を一覧で確認できます。</li>
+            <li>学生がつまずいている問を見つけ、授業での指導に生かせます。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5: 学生管理 -->
+    <section class="section">
+      <div class="feature">
+        <h2>学生管理と練習履歴</h2>
+        <div class="feature-wide">
+          <img src="image/manager05.png" alt="学生管理画面のスクリーンショット">
+          <ul>
+            <li>担当クラスごとに、練習している学生の一覧を表示します。</li>
+            <li>学生ごとに、問ごとのベストスコア・練習回数・最終練習日を確認できます。</li>
+            <li>練習記録をExcelファイルに出力できます。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="section">
+      <h2 style="margin:2px 0 6px 0;">動作環境</h2>
+      <ul>
+        <li>PC（Windows／Mac）のWebブラウザ（Google Chrome など）</li>
+        <li>日本大学のNU-Mailアカウントが必要です</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn" href="https://kotohane-c20cd.web.app" target="_blank" rel="noopener">kotohane Manager を開く</a>
+      </div>
+    </section>
+
+    <footer>© 2026 eigomStudio</footer>
+  </div>
+</body>
+</html>
