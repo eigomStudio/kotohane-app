@@ -128,6 +128,16 @@
 .summary-text {
   flex: 1;                 /* 残りのスペースをすべて使う */
 }
+  
+.image-pair {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.image-pair img {
+  width: 240px;
+}
 
 /* スマホ版の設定（縦並びに戻す） */
 @media (max-width: 600px) {
@@ -145,6 +155,13 @@
   .feature-item {
     flex-direction: column; /* スマホでは縦並びに戻す */
     /*text-align: center;    /* 文字を中央寄せにするとスマホっぽくなります */
+  }
+
+    .image-pair {
+    width: 100%;
+  }
+  .image-pair img {
+    width: calc(50% - 6px);
   }
 }
 </style>
@@ -225,7 +242,10 @@
         <div class="feature">
           <h2>練習記録とカレンダー</h2>
           <div class="feature-item">
+            <div class="image-pair">
           <img src="image/screenshots04.PNG" alt="screenshot of practice record" style="width: 280px; flex-shrink: 0;">
+              <img src="image/screenshot06.png" alt="screenshot of practice record detail">
+        </div>
             <ul>
             <li>練習した日がカレンダー上に言語の国旗で表示されます。</li>
             <li>日付をタップすると、その日の練習内容を確認できます。</li>
